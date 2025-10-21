@@ -179,7 +179,7 @@
     --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
     --color-border: rgba(var(--color-gray-400-rgb), 0.3);
     --color-error: var(--color-red-400);
-    --color-success: var(--color-teal-300);
+  --color-success: rgba(34, 139, 34, 1);
     --color-warning: var(--color-orange-400);
     --color-info: var(--color-gray-300);
   --color-focus-ring: rgba(var(--color-brown-600-rgb), 0.25);
@@ -346,7 +346,7 @@ a:hover { color: var(--color-primary-hover); }
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: var(--space-16);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-teal-300));
+  background: linear-gradient(135deg, var(--color-primary), rgba(var(--color-brown-600-rgb), 0.6));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
