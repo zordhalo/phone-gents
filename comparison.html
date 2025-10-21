@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Phone Caller Platform Comparison 2025 - AI Phone Agents</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="comparison-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">AI Phone Agents</a></div>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="index.html#bland">Bland AI</a></li>
+                <li><a class="nav-link" href="index.html#synthflow">Synthflow</a></li>
+                <li><a class="nav-link" href="index.html#retell">Retell AI</a></li>
+                <li><a class="nav-link active">Comparison</a></li>
+            </ul>
+            <button class="mobile-menu-button">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AI Phone Caller Platform Comparison 2025</h1>
+                <p>Compare 7 leading AI phone caller platforms across key features including voice technology, response times, pricing, and integrations to find the perfect solution for your business needs.</p>
+                <div class="scroll-indicator" onclick="scrollToComparison()">
+                    <span>↓</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Platforms</button>
+                <button class="filter-btn" data-filter="developer">Developer-Focused</button>
+                <button class="filter-btn" data-filter="agency">Agency-Focused</button>
+                <button class="filter-btn" data-filter="sms">Has SMS Support</button>
+                <button class="filter-btn" data-filter="crm">Has CRM Integration</button>
+                <button class="filter-btn" data-filter="budget">Under $0.10/min</button>
+                <button class="filter-btn" data-filter="fast">Fastest Response (&lt;2s)</button>
+            </div>
+            <div class="filter-count">
+                Showing <span id="result-count">7</span> platforms
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="comparison-section" id="comparison">
+        <div class="container">
+            <h2 class="section-heading">Platform Comparison</h2>
+            
+            <!-- Desktop Table -->
+            <div class="table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-sort="name">Platform Name</th>
+                            <th class="sortable" data-sort="voice">Voice Technology</th>
+                            <th class="sortable" data-sort="latency">Response Latency</th>
+                            <th class="sortable" data-sort="cost">Cost per Minute</th>
+                            <th class="sortable" data-sort="sms">SMS Support</th>
+                            <th class="sortable" data-sort="calendar">Calendar Integration</th>
+                            <th class="sortable" data-sort="crm">CRM Integration</th>
+                            <th class="sortable" data-sort="focus">Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Cards -->
+            <div class="mobile-cards" id="mobile-cards">
+                <!-- Mobile cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Platform Cards Section -->
+    <section class="cards-section">
+        <div class="container">
+            <h2 class="section-heading">Platform Details</h2>
+            <div class="cards-grid" id="platform-cards">
+                <!-- Platform cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights-section">
+        <div class="container">
+            <h2 class="section-heading">Key Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <span class="insight-icon">🚀</span>
+                    <div class="insight-title">Fastest Platform</div>
+                    <div class="insight-value">Retell AI</div>
+                    <div class="insight-description">1.79s response time</div>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-icon">💰</span>
+                    <div class="insight-title">Most Affordable</div>
+                    <div class="insight-value">Voiceflow</div>
+                    <div class="insight-description">$0.08/min with subscription</div>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-icon">🔗</span>
+                    <div class="insight-title">Best Integration</div>
+                    <div class="insight-value">Synthflow</div>
+                    <div class="insight-description">HubSpot &amp; Salesforce native</div>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-icon">👩‍💻</span>
+                    <div class="insight-title">Best for Developers</div>
+                    <div class="insight-value">Vapi AI</div>
+                    <div class="insight-description">Maximum customization options</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#bland">Bland AI</a>
+                <a href="index.html#synthflow">Synthflow</a>
+                <a href="index.html#retell">Retell AI</a>
+                <a href="comparison.html">Comparison</a>
+            </div>
+            <p>&copy; 2025 AI Phone Agents. Empowering businesses with intelligent communication solutions.</p>
+            <p class="footer-note">Data compiled October 2025 | Testing methodology based on standard use cases and public documentation</p>
+        </div>
+    </footer>
+
+    <script>
+        // Platform data
+        const platforms = [
+            {
+                name: "Retell AI",
+                voice_technology: "External (11Labs, etc.)",
+                response_latency: 1.79,
+                cost_per_minute: 0.12,
+                sms_support: "Two-way",
+                calendar_integration: "Yes",
+                crm_integration: "Via API",
+                focus: "Balanced",
+                best_for: "Teams needing two-way SMS and fast responses"
+            },
+            {
+                name: "Vapi AI",
+                voice_technology: "Own + External",
+                response_latency: 1.91,
+                cost_per_minute: 0.12,
+                sms_support: "Yes",
+                calendar_integration: "Yes",
+                crm_integration: "Go High Level",
+                focus: "Developer-centric",
+                best_for: "Developers wanting maximum customization"
+            },
+            {
+                name: "Synthflow",
+                voice_technology: "External (11Labs, etc.)",
+                response_latency: 1.88,
+                cost_per_minute: 0.13,
+                sms_support: "No",
+                calendar_integration: "Yes",
+                crm_integration: "HubSpot/Salesforce",
+                focus: "Agency-centric",
+                best_for: "Agencies needing white-labeling and CRM integration"
+            },
+            {
+                name: "Bland AI",
+                voice_technology: "Own + External",
+                response_latency: 2.50,
+                cost_per_minute: 0.09,
+                sms_support: "Yes",
+                calendar_integration: "Partial",
+                crm_integration: "Go High Level",
+                focus: "Balanced",
+                best_for: "Budget-conscious teams needing CRM integration"
+            },
+            {
+                name: "ElevenLabs",
+                voice_technology: "Own",
+                response_latency: 2.60,
+                cost_per_minute: 0.12,
+                sms_support: "No",
+                calendar_integration: "No",
+                crm_integration: "API only",
+                focus: "Developer-centric",
+                best_for: "Developers prioritizing voice quality"
+            },
+            {
+                name: "Voiceflow",
+                voice_technology: "External",
+                response_latency: 2.70,
+                cost_per_minute: 0.08,
+                subscription_note: "Requires $60/month subscription",
+                sms_support: "No",
+                calendar_integration: "Google Calendar",
+                crm_integration: "Via API",
+                focus: "Balanced",
+                best_for: "High-volume users wanting lowest per-minute cost"
+            },
+            {
+                name: "Vogent",
+                voice_technology: "Own",
+                response_latency: 3.60,
+                cost_per_minute: 0.09,
+                sms_support: "Yes",
+                calendar_integration: "No",
+                crm_integration: "No",
+                focus: "Balanced",
+                best_for: "Simple implementations with basic SMS needs"
+            }
+        ];
+
+        let currentFilter = 'all';
+        let currentSort = { column: null, direction: 'asc' };
+        let filteredPlatforms = [...platforms];
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTable();
+            renderMobileCards();
+            renderPlatformCards();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    applyFilter();
+                });
+            });
+
+            // Table sorting
+            document.querySelectorAll('.sortable').forEach(th => {
+                th.addEventListener('click', function() {
+                    const column = this.dataset.sort;
+                    sortTable(column);
+                });
+            });
+
+            // Mobile menu
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+        }
+
+        function applyFilter() {
+            filteredPlatforms = platforms.filter(platform => {
+                switch(currentFilter) {
+                    case 'all':
+                        return true;
+                    case 'developer':
+                        return platform.focus === 'Developer-centric';
+                    case 'agency':
+                        return platform.focus === 'Agency-centric';
+                    case 'sms':
+                        return platform.sms_support !== 'No';
+                    case 'crm':
+                        return platform.crm_integration !== 'No' && platform.crm_integration !== 'API only';
+                    case 'budget':
+                        return platform.cost_per_minute < 0.10;
+                    case 'fast':
+                        return platform.response_latency < 2.0;
+                    default:
+                        return true;
+                }
+            });
+
+            document.getElementById('result-count').textContent = filteredPlatforms.length;
+            renderTable();
+            renderMobileCards();
+            renderPlatformCards();
+        }
+
+        function sortTable(column) {
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'asc';
+            }
+
+            filteredPlatforms.sort((a, b) => {
+                let aVal, bVal;
+                
+                switch(column) {
+                    case 'name':
+                        aVal = a.name;
+                        bVal = b.name;
+                        break;
+                    case 'voice':
+                        aVal = a.voice_technology;
+                        bVal = b.voice_technology;
+                        break;
+                    case 'latency':
+                        aVal = a.response_latency;
+                        bVal = b.response_latency;
+                        break;
+                    case 'cost':
+                        aVal = a.cost_per_minute;
+                        bVal = b.cost_per_minute;
+                        break;
+                    case 'sms':
+                        aVal = a.sms_support;
+                        bVal = b.sms_support;
+                        break;
+                    case 'calendar':
+                        aVal = a.calendar_integration;
+                        bVal = b.calendar_integration;
+                        break;
+                    case 'crm':
+                        aVal = a.crm_integration;
+                        bVal = b.crm_integration;
+                        break;
+                    case 'focus':
+                        aVal = a.focus;
+                        bVal = b.focus;
+                        break;
+                }
+
+                if (typeof aVal === 'number') {
+                    return currentSort.direction === 'asc' ? aVal - bVal : bVal - aVal;
+                } else {
+                    const comparison = aVal.localeCompare(bVal);
+                    return currentSort.direction === 'asc' ? comparison : -comparison;
+                }
+            });
+
+            // Update sort indicators
+            document.querySelectorAll('.sortable').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+                if (th.dataset.sort === column) {
+                    th.classList.add(currentSort.direction === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+
+            renderTable();
+            renderMobileCards();
+        }
+
+        function getLatencyClass(latency) {
+            if (latency < 2.0) return 'latency-fast';
+            if (latency < 2.5) return 'latency-medium';
+            return 'latency-slow';
+        }
+
+        function getCostClass(cost) {
+            if (cost < 0.10) return 'cost-low';
+            if (cost < 0.12) return 'cost-medium';
+            return 'cost-high';
+        }
+
+        function formatYesNo(value) {
+            if (value === 'No') {
+                return '<span class="x-icon">✗</span>';
+            } else {
+                return '<span class="check-icon">✓</span>';
+            }
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+
+            filteredPlatforms.forEach(platform => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><span class="platform-name">${platform.name}</span></td>
+                    <td>${platform.voice_technology}</td>
+                    <td><span class="${getLatencyClass(platform.response_latency)}">${platform.response_latency}s</span></td>
+                    <td>
+                        <span class="${getCostClass(platform.cost_per_minute)}">$${platform.cost_per_minute.toFixed(2)}</span>
+                        ${platform.subscription_note ? `<span class="subscription-note">*${platform.subscription_note}</span>` : ''}
+                    </td>
+                    <td>${formatYesNo(platform.sms_support)}</td>
+                    <td>${formatYesNo(platform.calendar_integration)}</td>
+                    <td>${formatYesNo(platform.crm_integration)}</td>
+                    <td>${platform.focus}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function renderMobileCards() {
+            const container = document.getElementById('mobile-cards');
+            container.innerHTML = '';
+
+            filteredPlatforms.forEach(platform => {
+                const card = document.createElement('div');
+                card.className = 'mobile-card';
+                card.innerHTML = `
+                    <div class="mobile-card-header">
+                        <h3 class="platform-name">${platform.name}</h3>
+                        ${getBadge(platform)}
+                    </div>
+                    <div class="mobile-card-stats">
+                        <div class="mobile-stat">
+                            <div class="mobile-stat-label">Response Time</div>
+                            <div class="mobile-stat-value ${getLatencyClass(platform.response_latency)}">${platform.response_latency}s</div>
+                        </div>
+                        <div class="mobile-stat">
+                            <div class="mobile-stat-label">Cost/Min</div>
+                            <div class="mobile-stat-value ${getCostClass(platform.cost_per_minute)}">$${platform.cost_per_minute.toFixed(2)}</div>
+                        </div>
+                        <div class="mobile-stat">
+                            <div class="mobile-stat-label">SMS</div>
+                            <div class="mobile-stat-value">${platform.sms_support !== 'No' ? '✓' : '✗'}</div>
+                        </div>
+                        <div class="mobile-stat">
+                            <div class="mobile-stat-label">CRM</div>
+                            <div class="mobile-stat-value">${platform.crm_integration !== 'No' ? '✓' : '✗'}</div>
+                        </div>
+                    </div>
+                    <div class="small-text">
+                        <strong>Focus:</strong> ${platform.focus}<br>
+                        <strong>Voice:</strong> ${platform.voice_technology}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function getBadge(platform) {
+            if (platform.name === 'Retell AI') {
+                return '<span class="badge badge-fastest">Fastest</span>';
+            } else if (platform.name === 'Voiceflow') {
+                return '<span class="badge badge-cheapest">Cheapest</span>';
+            } else if (platform.name === 'Synthflow') {
+                return '<span class="badge badge-integration">Best CRM</span>';
+            }
+            return '';
+        }
+
+        function getPlatformInitials(name) {
+            return name.split(' ').map(word => word[0]).join('').substring(0, 2);
+        }
+
+        function renderPlatformCards() {
+            const container = document.getElementById('platform-cards');
+            container.innerHTML = '';
+
+            filteredPlatforms.forEach(platform => {
+                const card = document.createElement('div');
+                card.className = 'platform-card';
+                
+                const features = [];
+                if (platform.sms_support !== 'No') features.push('📱 SMS Support');
+                if (platform.calendar_integration !== 'No') features.push('📅 Calendar Integration');
+                if (platform.crm_integration !== 'No' && platform.crm_integration !== 'API only') {
+                    features.push('🔗 Native CRM Integration');
+                }
+                if (platform.response_latency < 2.0) features.push('⚡ Fast Response');
+                if (platform.cost_per_minute < 0.10) features.push('💰 Budget Friendly');
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="platform-header-content">
+                            <div class="platform-logo">${getPlatformInitials(platform.name)}</div>
+                            <h3 class="platform-title">${platform.name}</h3>
+                        </div>
+                        ${getBadge(platform)}
+                    </div>
+                    <div class="key-stats">
+                        <div class="stat">
+                            <span class="stat-value ${getLatencyClass(platform.response_latency)}">${platform.response_latency}s</span>
+                            <div class="stat-label">Response Time</div>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value ${getCostClass(platform.cost_per_minute)}">$${platform.cost_per_minute.toFixed(2)}</span>
+                            <div class="stat-label">Per Minute</div>
+                        </div>
+                    </div>
+                    <ul class="features-list">
+                        ${features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                    <div class="best-for">
+                        <div class="best-for-label">Best For:</div>
+                        <div class="best-for-text">${platform.best_for}</div>
+                    </div>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        function scrollToComparison() {
+            document.getElementById('comparison').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

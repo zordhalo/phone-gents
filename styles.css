@@ -9,7 +9,7 @@
   --color-gray-300: rgba(167, 169, 169, 1);
   --color-gray-400: rgba(119, 124, 124, 1);
   --color-slate-500: rgba(98, 108, 113, 1);
-  --color-brown-600: rgba(91, 58, 41, 1); /* primary brown */
+  --color-brown-600: rgba(168, 120, 95, 1); /* lighter primary brown */
   --color-charcoal-700: rgba(18, 18, 18, 1);
   --color-charcoal-800: rgba(11, 11, 11, 1);
   --color-slate-900: rgba(12, 12, 12, 1);
@@ -26,7 +26,7 @@
   --color-orange-500: rgba(168, 75, 47, 1);
 
   /* RGB versions for opacity control */
-  --color-brown-600-rgb: 91, 58, 41;
+  --color-brown-600-rgb: 168, 120, 95;
   --color-teal-500-rgb: 33, 128, 141;
   --color-slate-900-rgb: 12, 12, 12;
   --color-slate-500-rgb: 98, 98, 98;
@@ -47,8 +47,8 @@
   --color-bg-8: rgba(240, 235, 230, 0.06);
 
   /* Semantic Color Tokens (Light Mode) */
-  --color-background: var(--color-cream-50); /* page background: warm off-white */
-  --color-surface: var(--color-cream-100); /* surface / cards: white */
+  --color-background: var(--color-white); /* light mode now pure white */
+  --color-surface: rgba(250, 247, 243, 1); /* keep surfaces slightly warm for contrast */
   --color-text: var(--color-black); /* primary text: black */
   --color-text-secondary: rgba(var(--color-brown-600-rgb), 0.8); /* secondary text in brown tone */
   --color-primary: var(--color-brown-600); /* primary accent: brown */
@@ -67,6 +67,10 @@
   --color-info: rgba(120, 120, 120, 1);
   --color-focus-ring: rgba(var(--color-brown-600-rgb), 0.18);
   --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+  /* Theme toggle button */
+  --toggle-size: 36px;
+  --toggle-color: rgba(var(--color-brown-600-rgb), 1);
 
   /* Common style patterns */
   --focus-ring: 0 0 0 3px var(--color-focus-ring);
@@ -147,58 +151,64 @@
   --container-xl: 1280px;
 }
 
-/* Dark mode colors */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* RGB versions for opacity control (Dark Mode) */
-    --color-gray-400-rgb: 119, 124, 124;
-    --color-teal-300-rgb: 50, 184, 198;
-    --color-gray-300-rgb: 167, 169, 169;
-    --color-gray-200-rgb: 245, 245, 245;
+/* Dark mode colors - always applied now */
+:root {
+  /* RGB versions for opacity control (Dark Mode) */
+  --color-gray-400-rgb: 119, 124, 124;
+  --color-teal-300-rgb: 50, 184, 198;
+  --color-gray-300-rgb: 167, 169, 169;
+  --color-gray-200-rgb: 245, 245, 245;
 
-    /* Background color tokens (Dark Mode) */
-      --color-bg-1: rgba(20, 20, 20, 0.15);
-      --color-bg-2: rgba(40, 30, 25, 0.12);
-      --color-bg-3: rgba(38, 30, 25, 0.12);
-      --color-bg-4: rgba(60, 40, 30, 0.12);
-      --color-bg-5: rgba(55, 40, 35, 0.12);
-      --color-bg-6: rgba(45, 35, 30, 0.12);
-      --color-bg-7: rgba(50, 40, 35, 0.12);
-      --color-bg-8: rgba(35, 30, 28, 0.12);
+  /* Background color tokens (Dark Mode) */
+  --color-bg-1: rgba(20, 20, 20, 0.15);
+  --color-bg-2: rgba(40, 30, 25, 0.12);
+  --color-bg-3: rgba(38, 30, 25, 0.12);
+  --color-bg-4: rgba(60, 40, 30, 0.12);
+  --color-bg-5: rgba(55, 40, 35, 0.12);
+  --color-bg-6: rgba(45, 35, 30, 0.12);
+  --color-bg-7: rgba(50, 40, 35, 0.12);
+  --color-bg-8: rgba(35, 30, 28, 0.12);
 
-    /* Semantic Color Tokens (Dark Mode) */
-    --color-background: var(--color-charcoal-700);
-    --color-surface: var(--color-charcoal-800);
-    --color-text: var(--color-gray-200);
-    --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+  /* Semantic Color Tokens (Dark Mode) */
+  --color-background: var(--color-charcoal-700);
+  --color-surface: var(--color-charcoal-800);
+  --color-text: var(--color-gray-200);
+  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
   --color-primary: var(--color-brown-600);
   --color-primary-hover: rgba(var(--color-brown-600-rgb), 0.9);
   --color-primary-active: rgba(var(--color-brown-600-rgb), 1);
-    --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-    --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-    --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-    --color-border: rgba(var(--color-gray-400-rgb), 0.3);
-    --color-error: var(--color-red-400);
+  --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-error: var(--color-red-400);
   --color-success: rgba(34, 139, 34, 1);
-    --color-warning: var(--color-orange-400);
-    --color-info: var(--color-gray-300);
+  --color-warning: var(--color-orange-400);
+  --color-info: var(--color-gray-300);
   --color-focus-ring: rgba(var(--color-brown-600-rgb), 0.25);
   --color-btn-primary-text: var(--color-white);
   --color-card-border: rgba(255,255,255,0.04);
   --color-card-border-inner: rgba(255,255,255,0.02);
-    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    --button-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-    --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-    --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
-
-    /* Common style patterns - updated for dark mode */
-    --focus-ring: 0 0 0 3px var(--color-focus-ring);
-    --focus-outline: 2px solid var(--color-primary);
-    --status-bg-opacity: 0.15;
-    --status-border-opacity: 0.25;
-  }
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  --button-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
 }
+
+/* Always dark theme */
+:root {
+  --color-background: #0f0f10; /* very dark background */
+  --color-surface: #121212; /* dark surfaces */
+  --color-text: rgba(245,245,245,1);
+  --color-text-secondary: rgba(200, 180, 160, 0.8);
+  --color-border: rgba(255,255,255,0.04);
+  --color-card-border: rgba(255,255,255,0.04);
+}
+
+/* Dark class no longer needed as the site is always dark */
+
+.navbar .nav-container { gap: 12px; }
 
 /* Base styles */
 html {
@@ -257,27 +267,27 @@ a:hover { color: var(--color-primary-hover); }
 /* Custom styles for the application */
 .hero-gradient {
   background: linear-gradient(135deg,
-    rgba(var(--color-brown-600-rgb), 0.06) 0%,
-    rgba(220, 210, 200, 0.04) 50%,
-    rgba(250, 245, 240, 0.02) 100%);
+    rgba(50, 35, 30, 0.95) 0%,
+    rgba(25, 22, 20, 1) 50%,
+    rgba(18, 16, 15, 0.98) 100%);
 }
 
 .agent-gradient-1 {
   background: linear-gradient(135deg,
-    rgba(var(--color-brown-600-rgb), 0.04) 0%,
-    rgba(245, 240, 235, 0.02) 100%);
+    rgba(var(--color-brown-600-rgb), 0.08) 0%,
+    rgba(245, 240, 235, 0.04) 100%);
 }
 
 .agent-gradient-2 {
   background: linear-gradient(135deg,
-    rgba(200, 180, 160, 0.04) 0%,
-    rgba(var(--color-brown-600-rgb), 0.03) 100%);
+    rgba(220, 190, 170, 0.06) 0%,
+    rgba(var(--color-brown-600-rgb), 0.05) 100%);
 }
 
 .agent-gradient-3 {
   background: linear-gradient(135deg,
-    rgba(245, 240, 235, 0.03) 0%,
-    rgba(var(--color-brown-600-rgb), 0.04) 100%);
+    rgba(245, 240, 235, 0.05) 0%,
+    rgba(var(--color-brown-600-rgb), 0.07) 100%);
 }
 
 /* Navigation */
@@ -346,10 +356,11 @@ a:hover { color: var(--color-primary-hover); }
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: var(--space-16);
-  background: linear-gradient(135deg, var(--color-primary), rgba(var(--color-brown-600-rgb), 0.6));
+  background: linear-gradient(135deg, var(--color-primary), rgba(var(--color-brown-600-rgb), 0.7));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero p { font-size: var(--font-size-xl); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto var(--space-24); }
@@ -392,8 +403,26 @@ a:hover { color: var(--color-primary-hover); }
 
 /* CTA section */
 .cta-section { text-align: center; background: var(--color-bg-1); border-radius: var(--radius-lg); padding: var(--space-32); margin: var(--space-32) 0; }
-.cta-button { display: inline-block; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover)); color: var(--color-btn-primary-text); padding: var(--space-16) var(--space-32); border-radius: var(--radius-base); font-weight: var(--font-weight-semibold); text-decoration: none; transition: all var(--duration-normal) var(--ease-standard); box-shadow: var(--shadow-sm); border: none; cursor: pointer; font-size: var(--font-size-lg); }
-.cta-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary-active)); }
+.cta-button { 
+  display: inline-block; 
+  background: linear-gradient(135deg, var(--color-primary), rgba(var(--color-brown-600-rgb), 0.8)); 
+  color: var(--color-btn-primary-text); 
+  padding: var(--space-16) var(--space-32); 
+  border-radius: var(--radius-base); 
+  font-weight: var(--font-weight-semibold); 
+  text-decoration: none; 
+  transition: all var(--duration-normal) var(--ease-standard); 
+  box-shadow: var(--shadow-sm); 
+  border: none; 
+  cursor: pointer; 
+  font-size: var(--font-size-lg);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.cta-button:hover { 
+  transform: translateY(-2px); 
+  box-shadow: var(--shadow-md); 
+  background: linear-gradient(135deg, rgba(var(--color-brown-600-rgb), 0.9), var(--color-primary)); 
+}
 
 .best-for { background: var(--color-bg-3); border-radius: var(--radius-lg); padding: var(--space-16); margin: var(--space-24) 0; text-align: center; }
 .best-for-label { font-weight: var(--font-weight-semibold); color: var(--color-success); font-size: var(--font-size-sm); text-transform: uppercase; margin-bottom: var(--space-8); }
